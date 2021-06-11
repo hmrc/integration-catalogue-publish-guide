@@ -3,15 +3,12 @@ host: developer.service.hmrc.gov.uk
 
 # Header-related options
 show_govuk_logo: true
-service_name: HUMAN READABLE SERVICE GUIDE NAME
-service_link: /guides/NAME-OF-YOUR-SERVICE-GUIDE/
+service_name: API catalogue publish guide
+service_link: /guides/api-catalogue-publish-guide/
 
 # Links to show on right-hand-side of header
 header_links:
-  Developer Hub: https://developer.service.hmrc.gov.uk
-  Documentation: https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub
-  Applications: https://developer.service.hmrc.gov.uk/developer/applications
-  Support: https://developer.service.hmrc.gov.uk/developer/support
+  API catalogue: https://admin.tax.service.gov.uk/api-catalogue
 
 # Enables search functionality. This indexes pages only and is not recommended for single-page sites.
 enable_search: false

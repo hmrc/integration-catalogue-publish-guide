@@ -1,4 +1,4 @@
 ->      /                                                  health.Routes
-GET     /guides/NAME-OF-YOUR-SERVICE-GUIDE           controllers.Default.redirect(to = "/guides/NAME-OF-YOUR-SERVICE-GUIDE/")
-GET     /guides/NAME-OF-YOUR-SERVICE-GUIDE/          controllers.Assets.at(path="/public", file="index.html")
-GET     /guides/NAME-OF-YOUR-SERVICE-GUIDE/*file     controllers.Assets.at(path="/public", file)
+GET     /guides/api-catalogue-publish-guide           controllers.Default.redirect(to = "/guides/api-catalogue-publish-guide/")
+GET     /guides/api-catalogue-publish-guide/          controllers.Assets.at(path="/public", file="index.html")
+GET     /guides/api-catalogue-publish-guide/*file     controllers.Assets.at(path="/public", file)

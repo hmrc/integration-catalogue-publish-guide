@@ -1,6 +1,6 @@
 import uk.gov.hmrc.sbtdistributables.SbtDistributablesPlugin.publishingSettings
 
-val appName = "NAME-OF-YOUR-SERVICE-GUIDE"
+val appName = "api-catalogue-publish-guide"
 
 lazy val microservice = Project(appName, file("."))
   .enablePlugins(play.sbt.PlayScala, SbtAutoBuildPlugin, SbtGitVersioning, SbtDistributablesPlugin)
