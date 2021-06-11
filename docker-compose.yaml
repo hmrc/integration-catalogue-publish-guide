@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+
+  tech-doc:
+    build: .
+    network_mode: host
+    volumes:
+      - ./:/mnt
+    working_dir: /mnt
+    command: bash -c "bundle install && bundle exec middleman"
