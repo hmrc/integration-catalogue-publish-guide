@@ -7,8 +7,9 @@ lazy val microservice = Project(appName, file("."))
   .settings(
     libraryDependencies ++= AppDependencies.compile ++ AppDependencies.test,
     evictionWarningOptions in update := EvictionWarningOptions.default.withWarnScalaVersionEviction(false),
-    majorVersion := 0
+    majorVersion := 0,
+    scalaVersion  := "2.12.14"
   )
   .settings(
-    publishingSettings: _*
+    publishingSettings: _*,
   )
