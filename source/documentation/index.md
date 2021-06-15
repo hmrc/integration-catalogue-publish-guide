@@ -1,6 +1,6 @@
 ---
 title: Example Service Guide
-weight: 1
+weight: 10
 ---
 
 # API catalogue publish guide
@@ -8,10 +8,9 @@ weight: 1
 Version 1.0 issued 1 January 2020
 ***
 
-## Overview
+# Publishing content on the API catalogue
 
-## End-to-end user journeys
 
-## Related API documentation
+The API catalogue shows what Enterprise Integration Services (EIS) APIs and file transfer patterns are available to reuse.
 
-## Changelog
+You can publish APIs and file transfers on the API catalogue.
