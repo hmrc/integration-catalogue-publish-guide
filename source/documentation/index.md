@@ -8,7 +8,7 @@ weight: 10
 Version 1.0 issued 1 January 2020
 ***
 
-# Publishing content on the API catalogue
+## Publishing content on the API catalogue
 
 
 The API catalogue shows what Enterprise Integration Services (EIS) APIs and file transfer patterns are available to reuse.
