@@ -1,8 +1,9 @@
-# Service Guides
+# Integration Catalogue Publish Guide
 
 ## Overview
 
-Service Guides are created using GDS [Tech Docs Templates](https://github.com/alphagov/tech-docs-template).
+This is based on the Service Guides created using GDS [Tech Docs Templates](https://github.com/alphagov/tech-docs-template).
+
 The generated HTML files are then served by a simple Scala Play application so that they can be deployed
 as an MDTP microservice.
 
@@ -11,21 +12,6 @@ Examples of Service Guides can be seen in [API Documentation in Developer Hub](h
 ## Getting started
 
 Read [Tech Docs Templates][tdt] and [Documentation on using Tech Docs Templates](https://tdt-documentation.london.cloudapps.digital/#technical-documentation-template).
-
-### Setup the Scala Application
-
-`NAME-OF-YOUR-SERVICE-GUIDE` = The git repo name of your service guide 
-
-* Edit `./build.sbt` and replace `NAME-OF-YOUR-SERVICE-GUIDE`
-* Edit `./conf/prod.routes` and replace `NAME-OF-YOUR-SERVICE-GUIDE`
-* Edit `./conf/application.conf` and replace `NAME-OF-YOUR-SERVICE-GUIDE`
-* Edit `./test/BuildSpec` and replace `NAME-OF-YOUR-SERVICE-GUIDE`
-
-### Setup Tech Docs
-
-* Edit `config/tech-docs.yml`
-  * Update `service_name` to a human-readable name of your service guide
-  * Update `service_link`, replace `NAME-OF-YOUR-SERVICE-GUIDE`
 
 ## Editing Service Guide pages
 
