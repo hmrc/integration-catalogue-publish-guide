@@ -51,3 +51,17 @@ The API catalogue publish tools let you:
 - bulk publish OAS or file transfer definition files
 
 See the [Gways to manage publishing on the API catalogue](https://github.com/hmrc/integration-catalogue-tools#readme) 
+
+## Using CURL to publish content
+
+### Example
+
+```
+curl -X 'PUT' \
+  'https://admin.tax.service.gov.uk/integration-catalogue-admin-api/services/apis/publish' \
+  -H 'accept: application/json' \
+  -H 'x-specification-type: OAS_V3' \
+  -H 'Authorization: <my-key>' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'selectedFile=@my-api-oas.yaml'
+```
