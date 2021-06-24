@@ -5,9 +5,48 @@ weight: 50
 
 # API catalogue File Transfers Reference
 
-Full details of th API catalogue File Transfer specification : TODO
- - ???
- 
- 
- 
- Adam TODO
+A file transfer is defined in the following JSON specification.
+
+DRAFT - TODO How should we flag this as draft? Should we draft is as draf? Should it really be Alpha?
+
+## File Transfer JSON definition example
+
+```
+{
+  "fileTransferSpecificationVersion":"0.1",
+  "publisherReference":"MyRef-1",
+  "platformType":"API_Platform",
+  "title":"My File Transfer",
+  "description":"This is my file transfer. A file goes from this System-A to System-B",
+  "lastUpdated":"2021-01-01T13:45:10Z",
+  "contact":{
+    "name":"Example Contact",
+    "emailAddress":"example.contact@example.con"
+  },
+  "sourceSystem":[
+    "System A"
+  ],
+  "targetSystem":[
+    "System B"
+  ],
+  "fileTransferPattern":"Corp to Corp"
+}
+```
+
+## Details
+
+### Root fields 
+
+| Field                           | Type              | Required  | Description |
+| --------------------------------|-------------------|-----------|-------------|
+|fileTransferSpecificationVersion | string            | true      | The version of the file transfer specification. Set it to `"0.1"` |
+|publisherReference               | string            | true      | |
+|platformType                     | string            | true      | Must be a valid platform type. See TODO |
+|title                            | string            | ?         | The title that will appear in the API catalogue |
+|description                      | string            | ?         | The description that will appear in the API catalogue | Up to 180 characters |
+|lastUpdated                      | [ISO 8601](https://www.iso.org/standard/40874.html) datetime | ? | Date of when this document was last updated |
+|contact.name                     | string            | ?         | The display name of the contact |
+|contact.email                    | string            | ?         | The email address of the contact |
+|sourceSystem                     | string            | ?         | List of source systems | Can be empty list? TODO |
+|targetSystem                     | string            | ?         | List of target systems | Can be empty list? TODO |
+|fileTransferPattern              | string            | true     | Textual description of the file transfer architecture pattern |
