@@ -6,11 +6,62 @@ weight: 40
 
 # API catalogue OpenAPI Specification Reference
 
-Full details of th API catalogue OAS extensions e.g. - TODO
- - reference
- - platform
- - short description
- - hods?
+Full details of the API catalogue OAS extensions e.g.
+
+## Api Catalogue OAS Extensions
+
+In order to ensure api catalogue functionality several [OAS Extensions](https://swagger.io/specification/#specification-extensions)
+have been created to support data required by the catalogue.
+
+Here is an example of the OAS specification with example extensions
+
+``` info:
+  title: Test Api
+  description: This is a test Api.
+  version: "1.0"
+  x-integration-catalogue:
+    platform: API_PLATFORM
+    publisher-reference: address-lookup
+    short-description: This is a private API.
+    backends:
+      - ETMP
+```
+The fields need to be placed under an extension named **x-integration-catalogue**.
+
+The available fields are :-
+
+| FieldName            | Required |
+| -------------------- |:-------------:|
+| platform             |no |
+| publisher-reference  |no |
+| short-description    |no |
+| backends             |no |
+
+### Platform (platform)
+Before you begin publishing to the API Catalogue you will be given a platform identifier.
+For example API_PLATFORM.
+The platform is used to identify where the API is hosted.
+This value along with the publisher reference makes up the unique identifier for the API on the API Catalogue.
+
+### Publisher Reference (publisher-reference)
+The Publisher reference is an alpha numeric text field.
+This value along with the platform makes up the unique identifier for the API on the API Catalogue.
+
+### Short Description (short-description)
+All APIs must have a short description of up to 180 characters including spaces.
+It will appear on the search / list of the API Catalogue under the title of the API.
+
+### Backends (backends)
+This a list of alpha numeric text fields.
+Each backend can be a system at HMRC exposed by endpoints in the API.
+A backend can be a HoD (Head of Duty) system.
+Examples of backends are ETMP and NPS.
+
+## Validation
+During publishing the following fields are validated.description
+
+* platform - This needs to be a valid platform. This is case insensitive.
+* short-description - This needs to be up to 180 characters including spaces.
 
 
- Adam TODO
+
