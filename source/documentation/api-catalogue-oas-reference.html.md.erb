@@ -26,25 +26,42 @@ Here is an example of the OAS specification with example extensions
     backends:
       - ETMP
 ```
-The fields need to be placed under an extension named **x-integration-catalogue**
+The fields need to be placed under an extension named **x-integration-catalogue**.
+
 The available fields are :-
 
 | FieldName            | Required |
 | -------------------- |:-------------:|
-| platform             |yes |
-| publisher-reference  |  |
-| short-description    |  |
-| backends             |  |
+| platform             |no |
+| publisher-reference  |no |
+| short-description    |no |
+| backends             |no |
 
 ### Platform (platform)
-Some details about platform
+Before you begin publishing to the API Catalogue you will be given a platform identifier.
+For example API_PLATFORM.
+The platform is used to identify where the API is hosted.
+This value along with the publisher reference makes up the unique identifier for the API on the API Catalogue.
 
 ### Publisher Reference (publisher-reference)
-Some details about publisher reference
+The Publisher reference is an alpha numeric text field.
+This value along with the platform makes up the unique identifier for the API on the API Catalogue.
 
 ### Short Description (short-description)
-Some details about short description
+All APIs must have a short description of up to 180 characters including spaces.
+It will appear on the search / list of the API Catalogue under the title of the API.
 
 ### Backends (backends)
-some details about backends
+This a list of alpha numeric text fields.
+Each backend can be a system at HMRC exposed by endpoints in the API.
+A backend can be a HoD (Head of Duty) system.
+Examples of backends are ETMP and NPS.
+
+## Validation
+During publishing the following fields are validated.description
+
+* platform - This needs to be a valid platform. This is case insensitive.
+* short-description - This needs to be up to 180 characters including spaces.
+
+
 
