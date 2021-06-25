@@ -5,9 +5,46 @@ weight: 50
 
 # API catalogue File Transfers Reference
 
-Full details of th API catalogue File Transfer specification : TODO
- - ???
- 
- 
- 
- Adam TODO
+A file transfer is defined in the following JSON specification.
+
+DRAFT - TODO @laura: How should we flag this as draft? We're confident that this specification is very likely to change.
+
+## Example
+
+```
+{
+  "fileTransferSpecificationVersion":"0.1",
+  "publisherReference":"MyRef-1",
+  "platformType":"API_Platform",
+  "title":"Customer record from CESA to ETMP",
+  "description":"A customer file is transfered between CESA and ETMP at the end of each month",
+  "lastUpdated":"2021-01-01T13:45:10Z",
+  "contact":{
+    "name":"Example Contact",
+    "emailAddress":"example.contact@example.con"
+  },
+  "sourceSystem":[
+    "CESA"
+  ],
+  "targetSystem":[
+    "ETMP"
+  ],
+  "fileTransferPattern":"Corp to Corp"
+}
+```
+
+## Schema
+
+| Field                           | Type              | Required  | Description |
+| --------------------------------|-------------------|-----------|-------------|
+|fileTransferSpecificationVersion | string            | true      | The version of the file transfer specification. Set it to `"0.1"` |
+|publisherReference               | string            | true      | The publisher reference |
+|platformType                     | string            | true      | Must be a valid platform type. See TODO (link to OAS in API catalogue) |
+|title                            | string            | true      | The title that will appear in the API catalogue |
+|description                      | string            | true      | The description that will appear in the API catalogue | Up to 180 characters |
+|lastUpdated                      | [ISO 8601](https://www.iso.org/standard/40874.html) datetime | true | Date of when this document was last updated |
+|contact.name                     | string            | true      | The display name of the contact |
+|contact.email                    | string            | true      | The email address of the contact |
+|sourceSystem                     | string            | true      | List of source systems. Can be an empty list. |
+|targetSystem                     | string            | true      | List of target systems. Can be an empty list. |
+|fileTransferPattern              | string            | true      | Textual description of the file transfer architecture pattern |

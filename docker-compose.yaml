@@ -4,7 +4,8 @@ services:
 
   tech-doc:
     build: .
-    network_mode: host
+    ports:
+      - "4567:4567"
     volumes:
       - ./:/mnt
     working_dir: /mnt
