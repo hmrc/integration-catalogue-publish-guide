@@ -6,11 +6,45 @@ weight: 40
 
 # API catalogue OpenAPI Specification Reference
 
-Full details of th API catalogue OAS extensions e.g. - TODO
- - reference
- - platform
- - short description
- - hods?
+Full details of th API catalogue OAS extensions e.g.
 
+## Api Catalogue OAS Extensions
 
- Adam TODO
+In order to ensure api catalogue functionality several [OAS Extensions](https://swagger.io/specification/#specification-extensions)
+have been created to support data required by the catalogue.
+
+Here is an example of the OAS specification with example extensions
+
+``` info:
+  title: Test Api
+  description: This is a test Api.
+  version: "1.0"
+  x-integration-catalogue:
+    platform: API_PLATFORM
+    publisher-reference: address-lookup
+    short-description: This is a private API.
+    backends:
+      - ETMP
+```
+The fields need to be placed under an extension named **x-integration-catalogue**
+The available fields are :-
+
+| FieldName            | Required |
+| -------------------- |:-------------:|
+| platform             |yes |
+| publisher-reference  |  |
+| short-description    |  |
+| backends             |  |
+
+### Platform (platform)
+Some details about platform
+
+### Publisher Reference (publisher-reference)
+Some details about publisher reference
+
+### Short Description (short-description)
+Some details about short description
+
+### Backends (backends)
+some details about backends
+
