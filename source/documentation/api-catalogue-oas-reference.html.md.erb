@@ -15,16 +15,27 @@ have been created to support data required by the catalogue.
 
 Here is an example of the OAS specification with example extensions
 
-``` info:
+```
+openapi: 3.0.1
+info:
   title: Test Api
   description: This is a test Api.
   version: "1.0"
+  contact:
+    name: First Surname
+    email: first@surname@example.com
   x-integration-catalogue:
     platform: API_PLATFORM
     publisher-reference: address-lookup
     short-description: This is a private API.
     backends:
       - ETMP
+paths:
+  /customers/details/:
+    get:
+      responses:
+        "200":
+          description: OK
 ```
 The fields need to be placed under an extension named **x-integration-catalogue**.
 
