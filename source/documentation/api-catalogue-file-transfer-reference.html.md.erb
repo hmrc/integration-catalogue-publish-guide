@@ -7,46 +7,44 @@ weight: 50
 
 A file transfer is defined in the following JSON specification.
 
-DRAFT - TODO How should we flag this as draft? Should we draft is as draf? Should it really be Alpha?
+DRAFT - TODO @laura: How should we flag this as draft? We're confident that this specification is very likely to change.
 
-## File Transfer JSON definition example
+## Example
 
 ```
 {
   "fileTransferSpecificationVersion":"0.1",
   "publisherReference":"MyRef-1",
   "platformType":"API_Platform",
-  "title":"My File Transfer",
-  "description":"This is my file transfer. A file goes from this System-A to System-B",
+  "title":"Customer record from CESA to ETMP",
+  "description":"A customer file is transfered between CESA and ETMP at the end of each month",
   "lastUpdated":"2021-01-01T13:45:10Z",
   "contact":{
     "name":"Example Contact",
     "emailAddress":"example.contact@example.con"
   },
   "sourceSystem":[
-    "System A"
+    "CESA"
   ],
   "targetSystem":[
-    "System B"
+    "ETMP"
   ],
   "fileTransferPattern":"Corp to Corp"
 }
 ```
 
-## Details
-
-### Root fields 
+## Schema
 
 | Field                           | Type              | Required  | Description |
 | --------------------------------|-------------------|-----------|-------------|
 |fileTransferSpecificationVersion | string            | true      | The version of the file transfer specification. Set it to `"0.1"` |
-|publisherReference               | string            | true      | |
-|platformType                     | string            | true      | Must be a valid platform type. See TODO |
-|title                            | string            | ?         | The title that will appear in the API catalogue |
-|description                      | string            | ?         | The description that will appear in the API catalogue | Up to 180 characters |
-|lastUpdated                      | [ISO 8601](https://www.iso.org/standard/40874.html) datetime | ? | Date of when this document was last updated |
-|contact.name                     | string            | ?         | The display name of the contact |
-|contact.email                    | string            | ?         | The email address of the contact |
-|sourceSystem                     | string            | ?         | List of source systems | Can be empty list? TODO |
-|targetSystem                     | string            | ?         | List of target systems | Can be empty list? TODO |
-|fileTransferPattern              | string            | true     | Textual description of the file transfer architecture pattern |
+|publisherReference               | string            | true      | The publisher reference |
+|platformType                     | string            | true      | Must be a valid platform type. See TODO (link to OAS in API catalogue) |
+|title                            | string            | true      | The title that will appear in the API catalogue |
+|description                      | string            | true      | The description that will appear in the API catalogue | Up to 180 characters |
+|lastUpdated                      | [ISO 8601](https://www.iso.org/standard/40874.html) datetime | true | Date of when this document was last updated |
+|contact.name                     | string            | true      | The display name of the contact |
+|contact.email                    | string            | true      | The email address of the contact |
+|sourceSystem                     | string            | true      | List of source systems. Can be an empty list. |
+|targetSystem                     | string            | true      | List of target systems. Can be an empty list. |
+|fileTransferPattern              | string            | true      | Textual description of the file transfer architecture pattern |
