@@ -11,6 +11,8 @@ phase: Alpha
 header_links:
   API catalogue: https://admin.tax.service.gov.uk/api-catalogue
 
+publish_api_link: /api-catalogue/search?keywords=%22publish+api%22
+
 # Enables search functionality. This indexes pages only and is not recommended for single-page sites.
 enable_search: false
 
