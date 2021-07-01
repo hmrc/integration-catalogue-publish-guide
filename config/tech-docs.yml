@@ -42,5 +42,5 @@ show_contribution_banner: false
 # api_path: https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore.yaml
 # api_path: source/pets.yml
 # api_path: https://raw.githubusercontent.com/hmrc/integration-catalogue-admin-frontend/master/publish-oas.yaml
-api_path: source/test-api-001-basic.yaml
+api_path: source/oas.yaml
 # api_path: source/publish-oas.yaml
