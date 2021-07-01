@@ -1,0 +1,172 @@
+openapi: 3.0.0
+info:
+  title: Check a UK EORI Number (example)
+  description: |-
+    # Overview
+    This API enables your application to:
+    * check if an EORI number beginning with GB (issued by the UK) is valid.
+    * view the name and address of the business that the EORI number is registered to (if the business agreed to share this information).
+
+    # Versioning
+    When an API changes in a way that is backwards-incompatible, we increase the version number of the API.
+    See our [reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/reference-guide#versioning) for more on
+    versioning.
+
+    # Errors
+    We use standard HTTP status codes to show whether an API request succeeded or not. They are usually in the range:
+    * 200 to 299 if it succeeded, including code 202 if it was accepted by an API that needs to wait for further action
+    * 400 to 499 if it failed because of a client error by your application
+    * 500 to 599 if it failed because of an error on our server
+    Errors specific to each API are shown in the Endpoints section, under Response.
+    See our [reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/reference-guide#errors) for more on errors.
+
+    # Testing
+    You can use the sandbox environment to [test this API](https://developer.service.hmrc.gov.uk/api-documentation/docs/testing).
+
+    In the sandbox environment the last digit of each EORI Number will return each type of CheckResponse:
+    * 0 or 1 Vaild with no TraderName or Address
+    * 2 to 5 Vaild with TraderName and Address
+    * 6 or 7 Vaild with no TraderName or Address
+    * 8 or 9 Invalid
+
+    [Access a set of mock EORI numbers](https://github.com/hmrc/check-eori-number-api/tree/master/public/api/conf/1.0/test-data) to use when testing in the sandbox environment. 
+
+    TESTTAG (this is just so you can search for all the test APIs)
+  version: "1.0 (Beta)"
+  x-integration-catalogue:
+    short-description: |
+      Check if an EORI number beginning with GB (issued by the UK)
+      is valid and retrieve an associated business name and address (if the business
+      agreed to share this information).
+    platform: API_PLATFORM
+    publisher-reference: check-eori-number-api-example
+
+paths:
+  /customs/eori/lookup/check-multiple-eori:
+    post:
+      tags:
+        - "Check EORI"
+      summary: Check multiple eori numbers
+      description: |-
+        This endpoint is used to retrieve a list of validated EORI numbers.
+
+        The endpoint will also retrieve the business' company name and address if the business has allowed it.
+        
+        ### Authorisation
+        This endpoint is [open access](https://developer.service.hmrc.gov.uk/api-documentation/docs/authorisation/open-access-endpoints) and requires no `Authorization` header.
+
+        ### Request headers for fraud prevention
+        See [fraud prevention](https://developer.service.hmrc.gov.uk/guides/fraud-prevention/).
+        
+      parameters:
+        - in: header
+          name: Accept
+          required: true
+          description: |
+            Specifies the response format and the version of the API to be used.
+            
+            For example: `application/vnd.hmrc.1.0+json`
+          schema: 
+            type: string
+        - in: header
+          name: Content-Type
+          required: true
+          description: |
+            Specifies the format of the request body, which must be JSON.
+            
+            For example: `application/json`
+          schema: 
+            type: string
+      requestBody:
+        content:
+          application/json:
+            examples:
+              example-1:
+                description: Check multiple EORI Numbers example
+                value:
+                  eoris:
+                    - GB123456789133
+                    - GB123456789136
+                    - GB8392848394939
+            schema:
+              type: object
+              additionalProperties: false
+              required:
+              - eoris
+              properties:
+                eoris:
+                  description: The unique identifier, also known as the eori number
+                  type: array
+                  maxItems: 10
+                  minItems: 1
+                  items:
+                    type: string
+                    minLength: 14
+                    maxLength: 17
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              examples:
+                example-1:
+                  description: Check multiple EORI Numbers example
+                  value:
+                    -
+                      eori: GB123456789133
+                      valid: true
+                      companyDetails:
+                        traderName: Aviationstr
+                        address:
+                          streetAndNumber: 141B Halsey Place
+                          cityName: Huddersfield
+                          postcode: HD98 2LI
+                      processingDate: 2021-01-05T09:54:08+00:00
+                    -
+                      eori: GB123456729136
+                      valid: true
+                      processingDate: 2021-01-05T09:54:08+00:00
+                    -
+                      eori: GB8392848394939
+                      valid: false
+                      processingDate: 2021-01-05T09:54:08+00:00
+        "400":
+          description: ""
+          content:
+            application/json:
+              schema:
+                title: Error
+                description: Invalid request
+                example:
+                  code: INVALID_REQUEST
+                  message: Invalid eori - eori parameters should be between 12 or 15 digits
+                type: object
+                additionalProperties: false
+                required:
+                  - message
+                  - code
+                properties:
+                  message:
+                    type: string
+                  code:
+                    type: string
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                title: Error
+                description: Internal server error
+                example:
+                  code: INTERNAL_SERVER_ERROR
+                  message: Unknown error
+                type: object
+                additionalProperties: false
+                required:
+                  - message
+                  - code
+                properties:
+                  message:
+                    type: string
+                  code:
+                    type: string
