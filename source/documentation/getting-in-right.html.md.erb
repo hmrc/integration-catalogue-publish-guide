@@ -29,4 +29,14 @@ See the recommended [CSV format]("https://github.com/hmrc/integration-catalogue-
 You cannot publish personal identification information (PII), offensive or inappropriate content. You are responsible for content about your API or file transfer. 
 
 ## Handling platform connectivity issues
-TODO
+
+The API catalogue is avaialble internally to HMRC. If you are on the stride network or the corperate VPN you can access
+the API catalogue publish API and the API catalgue website.
+
+To check that where you are publishing APIs from has access to the API by either browsing or CURLing the following:
+
+```
+curl 'https://admin.tax.service.gov.uk/integration-catalogue-admin-api/services/integrations?platformFilter=API_PLATFORM&searchTerm=%22Check%20a%20UK%20EORI%20Number%22'
+```
+
+If you are unable to access the above URL, please contact the API catalogue to try and help resolve any networking issues.
