@@ -3,14 +3,14 @@ title: API catalogue publish guide | Getting it right
 weight: 30
 ---
 
-
 # Getting it right
 
 Decide if you want to publish an API or file transfer.
 
-See the requirements for OAS and file transfer definitions. **TODO**
+See the requirements for OAS and file transfer definitions.
 
-TEST **TODO**
+- [API catalogue OpenAPI specification]("/documentation/api-catalogue-oas-reference.html#api-catalogue-openapi-specification-reference")
+- [API catalogue file transfer specification]("/documentation/api-catalogue-file-transfer-reference.html#api-catalogue-file-transfers-reference")
 
 ## If you have OAS files
 
@@ -24,9 +24,19 @@ See if there’s a way to automate publishing and updating APIs and file transfe
 
 You can create bulk generated OAS files for APIs and file transfers using a CSV file.
 
-See the recommended CSV format
+See the recommended [CSV format]("https://github.com/hmrc/integration-catalogue-tools#format-of-the-csv")</a>.
 
 You cannot publish personal identification information (PII), offensive or inappropriate content. You are responsible for content about your API or file transfer. 
 
 ## Handling platform connectivity issues
-tbc
+
+The API catalogue is avaialble internally to HMRC. If you are on the stride network or the corperate VPN you can access
+the API catalogue publish API and the API catalgue website.
+
+To check that where you are publishing APIs from has access to the API by either browsing or CURLing the following:
+
+```
+curl 'https://admin.tax.service.gov.uk/integration-catalogue-admin-api/services/integrations?platformFilter=API_PLATFORM&searchTerm=%22Check%20a%20UK%20EORI%20Number%22'
+```
+
+If you are unable to access the above URL, please contact the API catalogue to try and help resolve any networking issues.

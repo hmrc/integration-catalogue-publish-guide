@@ -1,13 +1,29 @@
 ---
 title: API catalogue publish guide | API catalogue File Transfers Reference
-weight: 50
+weight: 60
 ---
 
 # API catalogue File Transfers Reference
 
-A file transfer is defined in the following JSON specification.
+<%= warning_text('The following file transfer schema is currently a draft proposal and will be changing') %>
 
-DRAFT - TODO @laura: How should we flag this as draft? We're confident that this specification is very likely to change.
+A file transfer is defined in the following JSON schema.
+
+## Schema
+
+| Field                           | Type              | Required  | Description |
+| --------------------------------|-------------------|-----------|-------------|
+|fileTransferSpecificationVersion | string            | true      | The version of the file transfer specification. Set it to `"0.1"` |
+|publisherReference               | string            | true      | The publisher reference |
+|platformType                     | string            | true      | Must be a valid platform type |
+|title                            | string            | true      | The title that will appear in the API catalogue |
+|description                      | string            | true      | The description that will appear in the API catalogue | Up to 180 characters |
+|lastUpdated                      | [ISO 8601](https://www.iso.org/standard/40874.html) datetime | true | Date of when this document was last updated |
+|contact.name                     | string            | true      | The display name of the contact |
+|contact.email                    | string            | true      | The email address of the contact |
+|sourceSystem                     | string            | true      | List of source systems. Can be an empty list. |
+|targetSystem                     | string            | true      | List of target systems. Can be an empty list. |
+|fileTransferPattern              | string            | true      | Textual description of the file transfer architecture pattern |
 
 ## Example
 
@@ -32,19 +48,3 @@ DRAFT - TODO @laura: How should we flag this as draft? We're confident that this
   "fileTransferPattern":"Corp to Corp"
 }
 ```
-
-## Schema
-
-| Field                           | Type              | Required  | Description |
-| --------------------------------|-------------------|-----------|-------------|
-|fileTransferSpecificationVersion | string            | true      | The version of the file transfer specification. Set it to `"0.1"` |
-|publisherReference               | string            | true      | The publisher reference |
-|platformType                     | string            | true      | Must be a valid platform type. See TODO (link to OAS in API catalogue) |
-|title                            | string            | true      | The title that will appear in the API catalogue |
-|description                      | string            | true      | The description that will appear in the API catalogue | Up to 180 characters |
-|lastUpdated                      | [ISO 8601](https://www.iso.org/standard/40874.html) datetime | true | Date of when this document was last updated |
-|contact.name                     | string            | true      | The display name of the contact |
-|contact.email                    | string            | true      | The email address of the contact |
-|sourceSystem                     | string            | true      | List of source systems. Can be an empty list. |
-|targetSystem                     | string            | true      | List of target systems. Can be an empty list. |
-|fileTransferPattern              | string            | true      | Textual description of the file transfer architecture pattern |

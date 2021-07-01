@@ -6,6 +6,12 @@ weight: 20
 
 # Ways to publish on the API catalogue
 
+## What you need first
+
+ - Which [platform](/documentation/platforms-keys-and-publisher-references.html#platform-and-publisher-reference) you are, or if you need a new platform adding
+ - Your platform key
+ 
+
 ## Publishing APIs
 The API catalogue uses the [OpenAPI 3 Specification](https://www.openapis.org/) (OAS) to document APIs. OAS  is recommended by the Open Standards Board and Government Digital Service.
  
@@ -16,7 +22,7 @@ Your OAS must include:
 - a publisher reference number used to identify your API
 - a platform identifier given to you by us
 
-For full details see : blah TODO
+For full details see the [API catalogue OpenAPI Specification Reference](/documentation/api-catalogue-oas-reference.html).
 
 Check the GOV.UK Design System for [ways to document your API](https://www.gov.uk/guidance/gds-api-technical-and-data-standards#document-your-api) and [guidance on writing API reference documentation](https://www.gov.uk/guidance/writing-api-reference-documentation). 
 ## Publishing file transfers
@@ -32,11 +38,11 @@ Your file transfer definition must include:
 - a publisher reference number used to identify your file transfer
 - a platform identifier given to you by us
 
-See [schema](/documentation/api-catalogue-file-transfer-reference.html#schema) for full details.
+See the [API catalogue File Transfers Reference](/documentation/api-catalogue-file-transfer-reference.html#schema) for full details.
 
 ## Using the API catalogue publish API
 
-Read the <a href="<%=config[:tech_docs][:publish_api_link] %>" target="blank">technical specification (opens in a new tab)</a> of the API catalogue publish API for full details.
+Read the [technical specification](<%=config[:tech_docs][:publish_api_link] %>) of the API catalogue publish API for full details.
 
 ## Using the API catalogue tools to publish content
 
@@ -46,7 +52,7 @@ The API catalogue publish tools let you:
 - generate file transfer definition files
 - bulk publish OAS or file transfer definition files
 
-See the <a href="https://github.com/hmrc/integration-catalogue-tools#readme" target="blank">integration-catalogue-tools (opens in a new tab)</a> for how to use the API catalogue tooling.
+See the [integration-catalogue-tools](https://github.com/hmrc/integration-catalogue-tools#readme) for how to use the API catalogue tooling.
 
 ## Using CURL to publish content
 

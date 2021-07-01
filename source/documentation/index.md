@@ -5,7 +5,7 @@ weight: 10
 
 # API catalogue publish guide
 
-Version 1.0 issued 1 January 2020
+Version 0.1 issued 28th June 2021
 ***
 
 ## Publishing content on the API catalogue
