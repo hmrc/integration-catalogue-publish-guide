@@ -1,0 +1,211 @@
+openapi: 3.0.3
+info:
+  title: TEST-API-001 Basic OAS rendering
+  description: |
+    This is a test API to test the rendering of OAS in the API catalogue.
+    This is testing:
+     - Basic GET 
+     - Basic POST
+     - Parameters (path, query, header & cookie) and parameter properties
+     - All the verbs / methods
+
+    TESTTAG (this is just so you can search for all the test APIs)
+
+  version: "1.0"
+  contact:
+    name: Test Person Name
+    email: test.person@example.com
+  x-integration-catalogue:
+    platform: API_PLATFORM
+    publisher-reference: "test-api-001"
+    backends:
+      - THOD01
+      - THOD02
+paths:
+  /paths/basic:
+    get:
+      summary: Basic get
+      description: Path description (not shown)
+      responses:
+        "200":
+          description: Test OK response description (not shown)
+        "201":
+          description: Test some other OK response description (not shown)
+        "420":
+          description: | 
+            TODO: Doesn't handle this
+            Test non-specification HTTP response (not shown)
+        "500":
+          description: Test server error response description (not shown)
+    post:
+      summary: Basic post
+      description: Basic post with mandatory request body (not shown)
+      requestBody:
+        description: Post description (not shown)
+        required: true
+        content:
+          text/plain:
+            schema:
+              type: string
+      responses:
+        "200":
+          description: OK response description (not shown)
+
+  /paths/basic/no-summary:
+      get:
+        responses:
+          "200":
+            description: OK
+  /paths/with-default-response:
+      get:
+        summary: With default response
+        responses:
+          "200" :
+            description: Ok
+          default:
+            description: |
+              This fails as we assume the response is a number
+  #             Test 'default:' response (not shown). See spec for details:
+  #             https://swagger.io/specification/#responses-object
+
+  /paths/with-range-response:
+    get:
+      summary: With range response
+      responses:
+        "2XX" :
+          description: Ok
+
+  /paths/parameters/different-parameters-properties:
+    get:
+      summary: A test path with different parameters properties
+      parameters:
+        - in: query
+          description: 1 required (not shown)
+          name: parameter-1
+          required: true
+          schema:
+            type: string
+        - in: query
+          description: 2 not required (not shown)
+          name: parameter-2
+          required: false
+          schema:
+            type: string
+        - in: query
+          description: 3 default required (not required) (not shown)
+          name: parameter-3
+          schema:
+            type: string
+        - in: query
+          description: 4 deprecated (not shown)
+          name: parameter-4
+          deprecated: true
+          schema:
+            type: string
+        - in: query
+          description: 5 allow empty (not shown)
+          name: parameter-5
+          allowEmptyValue: true
+          schema:
+            type: string
+      responses: 
+        "200" : 
+          description: OK
+  /paths/parameters/{url-parameter-1}/{url-parameter-2}/details:
+    get:
+      summary: A test path with URL parameters
+      parameters:
+        - in: path
+          description: 1 (not shown)
+          name: url-parameter-1
+          required: true
+          schema:
+            type: string
+        - in: path
+          description: 2 (not shown)
+          name: url-parameter-2
+          required: true
+          schema:
+            type: string
+      responses: 
+        "200" : 
+          description: OK
+  /paths/parameters/queries:
+    get:
+      summary: A test path with query parameter
+      parameters:
+        - in: query
+          description: query 1 (not shown)
+          name: query-parameter-1
+          schema:
+            type: string
+      responses: 
+        "200" : 
+          description: OK
+  /paths/parameters/headers:
+    get:
+      summary: A test path with headers
+      parameters:
+        - in: header
+          description: header 1 (not shown)
+          name: header-parameter-1
+          schema:
+            type: string
+      responses: 
+        "200" : 
+          description: OK
+  /paths/parameters/cookie:
+    get:
+      summary: A test path with a cookie
+      parameters:
+        - in: cookie
+          description: | 
+            cookie 1 (not shown)
+            I'm not sure if we show cookie parameters, as I doubt any API use them. It's a FE thing
+          name: header-parameter-1
+          schema:
+            type: string
+      responses: 
+        "200" : 
+          description: OK
+
+  # We don't need to handle this - it's not valid OAS
+  # /paths/invalid-verbs:
+  #   invalid:
+  #     responses: 
+  #       "200" : 
+  #         description: OK
+  /paths/all-the-verbs:
+    get:
+      responses: 
+        "200" : 
+          description: OK
+    put:
+      responses: 
+        "200" : 
+          description: OK
+    post:
+      responses: 
+        "200" : 
+          description: OK
+    delete:
+      responses: 
+        "200" : 
+          description: OK
+    options:
+      responses: 
+        "200" : 
+          description: OK
+    head:
+      responses: 
+        "200" : 
+          description: OK
+    patch:
+      responses: 
+        "200" : 
+          description: OK
+    trace:
+      responses: 
+        "200" : 
+          description: OK
+
