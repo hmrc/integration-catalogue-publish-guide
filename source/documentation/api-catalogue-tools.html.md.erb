@@ -1,0 +1,33 @@
+---
+title: API catalogue publish guide | API catalogue tools
+weight: 50
+---
+# API catalogue tools
+
+## Using the API catalogue publish API
+
+You can [use the API catalogue publish API to publish and update content on the API catalogue](https://admin.qa.tax.service.gov.uk/api-catalogue/search?keywords=%22publish+api%22).
+
+## Using the API catalogue tools to publish content
+
+The API catalogue publish tools let you:
+
+- generate OpenAPI Specification (OAS) files
+- generate file transfer definition files
+- bulk publish OAS or file transfer definition files
+
+[Read more about the API catalogue tools on GitHub](https://github.com/hmrc/integration-catalogue-tools#readme).
+
+## Using CURL to publish content
+
+The API catalogue API can be used directly from CURL. For example:
+
+```
+curl -X 'PUT' \
+  'https://admin.tax.service.gov.uk/integration-catalogue-admin-api/services/apis/publish' \
+  -H 'accept: application/json' \
+  -H 'x-specification-type: OAS_V3' \
+  -H 'Authorization: <my-key>' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'selectedFile=@my-api-oas.yaml'
+```

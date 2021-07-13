@@ -8,9 +8,6 @@ weight: 10
 Version 0.1 issued 28th June 2021
 ***
 
-## Publishing content on the API catalogue
-
-
-The API catalogue shows what Enterprise Integration Services (EIS) APIs and file transfer patterns are available to reuse.
+The API catalogue shows what Enterprise Integration Services (EIS) APIs and file transfers are available for reuse.
 
 You can publish APIs and file transfers on the API catalogue.
