@@ -10,7 +10,7 @@ The API catalogue currently supports Open API Specification version 3.
 
 ## API catalogue OAS extensions
 
-Several [OAS extensions have been created ti support the data required in the API Catalogue](https://swagger.io/specification/#specification-extensions).
+Several [OAS extensions have been created to support the data required in the API Catalogue](https://swagger.io/specification/#specification-extensions).
 
 Here is an example of the OAS specification with example extensions.
 
@@ -27,6 +27,7 @@ info:
     platform: API_PLATFORM
     publisher-reference: address-lookup
     short-description: This is a private API.
+    status: LIVE
     backends:
       - ETMP
 paths:
@@ -45,6 +46,7 @@ Here are the available fields.
 | platform             |no |
 | publisher-reference  |no |
 | short-description    |no |
+| status               |no |
 | backends             |no |
 
 ### Platform 
@@ -61,6 +63,10 @@ If your API already has a number that does not change, this will make a good pub
 
 All APIs must have a short description of up to 180 characters including spaces. Short descriptions appear under the API title on the search results page on the API catalogue.
 
+### Status
+This is a current state of the API. Valid values are ALPHA, BETA, DEPRECATED or LIVE.
+If this field is missing the status will default to LIVE when published.
+
 ### Backends 
 Backends are a system at HMRC exposed by endpoints in the API. A backend can be a Head of Duty system, for example, ETMP or NPS.
 
@@ -70,6 +76,7 @@ During publishing we validate:
 
 - if the platform is valid - input is case insensitive
 - the short description is up to 180 characters including spaces
+- if the staus is valid - input is case insensitive
 
 ## API catalogue file transfers reference
 
