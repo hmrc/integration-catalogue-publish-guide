@@ -52,20 +52,19 @@ Here are the available fields.
 ### Platform 
 Before you begin publishing to the API Catalogue you will be given a platform identifier, for example, API_PLATFORM. The platform is used to identify where the API is hosted. 
 
-Contact the API catalogue team at example@example.com if you don’t know your platform or if your platform needs adding to the catalogue
+Contact the API catalogue team at api-catalogue-g@digital.hmrc.gov.uk if you don’t know your platform or if your platform needs adding to the catalogue.
 
 ### Publisher Reference 
 Each API needs a publisher reference to identify it. The publisher reference can be numbers, characters or both, for example, 1234 or A#12Z.
 
-If your API already has a number that does not change, this will make a good publisher reference.
+If your API already has a reference number that does not change, this will make a good publisher reference.
 
 ### Short descriptions
 
-All APIs must have a short description of up to 180 characters including spaces. Short descriptions appear under the API title on the search results page on the API catalogue.
+All APIs must have a [short description of up to 180 characters including spaces] LINK TO WRITING GOOD TITLES IN GETTING IT RIGHT. Short descriptions appear under the API title on the search results page on the API catalogue.
 
 ### Status
-This is a current state of the API. Valid values are ALPHA, BETA, DEPRECATED or LIVE.
-If this field is missing the status will default to LIVE when published.
+Tell us the status of the API. Valid vstatus alues are ALPHA, BETA, DEPRECATED or LIVE. If the status field is missing the status will default to LIVE when published.
 
 ### Backends 
 Backends are a system at HMRC exposed by endpoints in the API. A backend can be a Head of Duty system, for example, ETMP or NPS.
@@ -74,11 +73,11 @@ Backends are a system at HMRC exposed by endpoints in the API. A backend can be 
 
 During publishing we validate:
 
-- if the platform is valid - input is case insensitive
+- if the platform is valid 
 - the short description is up to 180 characters including spaces
-- if the staus is valid - input is case insensitive
+- if the staus is valid 
 
-## API catalogue file transfers reference
+## API catalogue file transfer definition
 
 A file transfer is defined in the following JSON schema.
 
@@ -128,23 +127,26 @@ A file transfer is defined in the following JSON schema.
 
 Use these examples to see what a good API looks like and check how to specify OpenAPI Specification (OAS) capabilities in an API.
 
-<%= warning_text('Examples are in the API catalogue test environment. Content in the test environment is not correct and should not be used or shared.') %>
+<%= warning_text('Examples are in the API catalogue test environment. Content in the test environment should not be used or shared.') %>
 
 ### Good examples of APIs in the API catalogue 
 
-[Individuals Tax Relief For Kitten Ownership](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/1b921101-44f2-4cb2-ac73-e268181c999b/individuals-tax-relief-for-kitten-ownership)
+[Individuals Tax Relief For Kitten Ownership](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/35b40c37-af13-4815-bb24-3b1bda7afd4e/individuals-tax-relief-for-kitten-ownership)
 
-[Check a UK EORI Number on the API platform](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/3cc804d1-2823-48e3-8f44-e27d1de7e277/check-a-uk-eori-number-example)
+[Check a UK EORI Number on the API platform](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/a3f090bc-bae4-4f56-b81c-8159021c3af6/check-a-uk-eori-number-example)
 
-[UK EORI Checker on the CMA platform](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/f3f918ea-3d58-467f-b593-95554aba5499/uk-eori-checker-example)
+[UK EORI Checker on the CMA platform](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/60da3427-34ed-4685-9079-2fe5a6bea3f4/uk-eori-checker-example)
 
-[Create or amend PSP subscription on the IF Platform](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/3b268ad8-57e8-427c-9379-a7be925961c1/api-1658-create-or-amend-psp-subscription)
+[Create or amend PSP subscription on the IF Platform](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/35152242-1b14-4c02-aa94-43ea1b517a3c/api-1658-create-or-amend-psp-subscription)
 
 ### Good examples of OAS files in the API catalogue
 
-- [Basic OAS](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/fd85ca43-e476-445b-8da8-1b6640fe2e5f/test-api-001-basic-oas-rendering)
-- [OAS with example JSON](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/801614c6-3157-4358-8257-34ecf7b6ac95/test-api-002-oas-with-examples)
-- [OAS with rish schemas](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/9bb64e1a-13a9-4200-b96c-d3ecfb2fad7f/test-api-003-rich-oas-schemas)
-- [OAS with markdown](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/34e109bb-86b1-4837-b099-d7080c606bf5/test-api-004-oas-with-markdown)
+[Basic OAS](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/7db37f74-073b-4c42-9406-e969bb23ad9f/test-api-001-basic-oas-rendering)
+
+[OAS with example JSON](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/f944a33c-4846-43b6-bcc6-849a7174093c/test-api-002-oas-with-examples)
+
+[OAS with rish schemas](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/aa88a3f0-e56f-40bf-8e5d-a321749ff9c7/test-api-003-rich-oas-schemas)
+
+[OAS with markdown](https://test-admin.tax.service.gov.uk/api-catalogue/integrations/b5d8ae55-2f6d-4729-9cf8-8a06ab740c8d/test-api-004-oas-with-markdown)
 
 
