@@ -6,17 +6,16 @@ weight: 20
 
 # What you need first
 
-Before you can publish content on the API catalogue, you need to know:
+Before you can publish content on the API catalogue, you need:
 
- - your platform or if your platform needs adding to the API catalogue
- - your publish reference 
- - your platform authorization key given to you by us
+ - your platform code 
+ - [your publisher reference](/documentation/what-you-need-first.html#your-publisher-reference)
+ - [your platform authorization key](/documentation/what-you-need-first.html#your-platform-authorization-key)
 
- 
+## Your platform code
 
-## Your platform
-
-Identify your platform using the platform code. You will need your platform code when using the API catalogue publish API, OpenAPI Specification (OAS) or file transfer definition.
+Identify your platform using the platform code. You will need your platform code when [using the API catalogue publish API](https://admin.tax.service.gov.uk/api-catalogue/integrations/60d73648-c984-4733-8820-d23732ddd183/publish-api-for-the-api-catalogue),
+[OpenAPI Specification (OAS)](/documentation/getting-in-right.html#if-you-have-oas-files) or [file transfer definition](/documentation/publishing-reference-guide.html#api-catalogue-file-transfer-definition).
 
 
 | Name                                      | Code                |
@@ -28,23 +27,28 @@ Identify your platform using the platform code. You will need your platform code
 | Integration Framework (IF)                | CORE_IF             |
 | Transaction Engine                        | TRANSACTION_ENGINE  |
 
-[See the complete list of platforms in the API catalogue publish API PlatformType schema](/api-catalogue/integrations/60d73648-c984-4733-8820-d23732ddd183/publish-api-for-the-api-catalogue).
+[See the complete list of platforms in the API catalogue publish API PlatformType schema](https://admin.tax.service.gov.uk/api-catalogue/integrations/60d73648-c984-4733-8820-d23732ddd183/publish-api-for-the-api-catalogue).
 
-Contact the API catalogue team at example@example.com If you do not know your platform or if your platform needs adding to the API catalogue.
+
+Contact the API catalogue team at [api-catalogue-g@digital.hmrc.gov.uk](mailto:api-catalogue-g@digital.hmrc.gov.uk) if you do not know your platform or if your platform needs to be added to the API catalogue.
 
 ## Your publisher reference 
 
-Each API or file transfer in the API catalogue needs a publisher reference to identify it. 
+Each API or file transfer in the API catalogue has a publisher reference to identify it. 
 
 The publisher reference can be numbers, characters or both, for example, 1234 or A#12Z.
 
-If your API or file transfer already has a number that does not change, this will make a good publisher reference.
+If your API or file transfer already has a reference number that does not change, this will make a good publisher reference.
 
-Publisher references cannot be changed once chosen. 
+Publisher references cannot be changed once you have published content on the API catalogue. 
 
 ## Your platform authorization key
 
-You need a platform authorization key to use the API catalogue publish API and API catalogue tools when publishing or updating content.
+You need a platform authorization key to [use the API catalogue publish API](https://admin.tax.service.gov.uk/api-catalogue/integrations/60d73648-c984-4733-8820-d23732ddd183/publish-api-for-the-api-catalogue)
+and [API catalogue tools](https://github.com/hmrc/integration-catalogue-tools#readme) when publishing or updating content.
 
-Contact the API catalogue team at example@example.com to get your authorization key if you do not know it.
+Contact the API catalogue team at [api-catalogue-g@digital.hmrc.gov.uk](mailto:api-catalogue-g@digital.hmrc.gov.uk) to get your authorization key if you do not have one.
 
+Once you have your platform code, publisher reference and platform authorization key, you can
+[start publishing APIs](https://admin.tax.service.gov.uk/api-catalogue/integrations/60d73648-c984-4733-8820-d23732ddd183/publish-api-for-the-api-catalogue)
+and [file transfers](/documentation/publishing-file-transfers.html).

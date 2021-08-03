@@ -5,16 +5,18 @@ weight: 60
 
 # Getting it right
 
-Decide if you want to publish an API or file transfer.
+Decide if you want to publish an API or file transfer. 
 
-[See the reference guide for OpenAPI Specification (OAS) requirements and file transfer definitions](/documentation/publishing-reference-guide.html).
+If you're publishing APIs,[see the reference guide for OpenAPI Specification (OAS) requirements](/documentation/publishing-reference-guide.html).
+
+If you're publishing file transfers, [check the file transfer definition in the reference guide](/documentation/publishing-reference-guide.html#api-catalogue-file-transfer-definition).
 
 ## If you have OAS files
 
 We recommend you take these steps. 
 
-- Use the API catalogue API to publish one API or file transfer first. 
-- Bulk publish your APIs and file transfers using the API catalogue tools.
+- [Use the API catalogue API to publish one API or file transfer first](https://admin.tax.service.gov.uk/api-catalogue/integrations/60d73648-c984-4733-8820-d23732ddd183/publish-api-for-the-api-catalogue)
+- Bulk publish your APIs and file transfers [using the API catalogue tools](https://github.com/hmrc/integration-catalogue-tools#readme).
 - See if there’s a way to automate publishing and updating APIs and file transfers.
 
 ## If you don’t have OAS files
@@ -29,6 +31,26 @@ You cannot publish personal identification information (PII), offensive or inapp
 
 [See examples of good APIs and file transfers in the API catalogue.](/documentation/publishing-reference-guide.html#example-oas-specifications)
 
+## Writing good titles and descriptions 
+
+All APIs and file transfers need a title and short description of up to 180 characters. 
+
+Tiles and descriptions appear on the search results page and the summary page for each API and file transfer. 
+
+Titles and descriptions must be easy to read so people can scan them and find what they're looking for. 
+
+Do not include 'API' in the title, only the name of the API. For example, Marriage Allowance.
+
+Descriptions help users to know what they're looking at. 
+
+All APIs and file transfers must have a short description of up to 180 characters, including spaces.
+
+Avoid using the name of the API in the description. Do not start the sentence with 'This API'.
+
+For example, here is the short description for the Marriage Allowance API. 
+
+> Retrieve an individual's marriage allowance status or check their partner's eligibility to be a marriage allowance recipient.
+
 ## Handling platform connectivity issues
 
 If you use the stride network or the corporate VPN you can access the API catalogue and the API catalogue publish API. 
@@ -39,4 +61,4 @@ Check you have access to the API catalogue by browsing or CURLing the URL:
 curl 'https://admin.tax.service.gov.uk/integration-catalogue-admin-api/services/integrations?platformFilter=API_PLATFORM&searchTerm=%22Check%20a%20UK%20EORI%20Number%22'
 ```
 
-Contact the API catalogue team on example@example.xom if you cannot access the URL. 
+Contact the API catalogue team on [api-catalogue-g@digital.hmrc.gov.uk](mailto:api-catalogue-g@digital.hmrc.gov.uk) if you cannot access the URL. 
