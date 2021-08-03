@@ -9,16 +9,14 @@ Decide if you want to publish an API or file transfer.
 
 If you're publishing APIs,[see the reference guide for OpenAPI Specification (OAS) requirements](/documentation/publishing-reference-guide.html).
 
-<%# TODO: Sort links %>
-If you're publishing file transfers, [check the file transfer definition in the reference guide]. LINK TO FILE TRANSFER DEFINITION IN REF GUIDE.
+If you're publishing file transfers, [check the file transfer definition in the reference guide](/documentation/publishing-reference-guide.html#api-catalogue-file-transfer-definition).
 
 ## If you have OAS files
 
 We recommend you take these steps. 
 
-<%# TODO: Sort links %>
-- [Use the API catalogue API to publish one API or file transfer first] LINK TO API IN API CATALOGUE. 
-- Bulk publish your APIs and file transfers [using the API catalogue tools]. LINK TO API CATALOGUE TOOLS
+- [Use the API catalogue API to publish one API or file transfer first](https://admin.tax.service.gov.uk/api-catalogue/integrations/60d73648-c984-4733-8820-d23732ddd183/publish-api-for-the-api-catalogue)
+- Bulk publish your APIs and file transfers [using the API catalogue tools](https://github.com/hmrc/integration-catalogue-tools#readme).
 - See if there’s a way to automate publishing and updating APIs and file transfers.
 
 ## If you don’t have OAS files
@@ -51,9 +49,7 @@ Avoid using the name of the API in the description. Do not start the sentence wi
 
 For example, here is the short description for the Marriage Allowance API. 
 
-<%# TODO: NEED TO FORMAT THIS SOMEHOW? %>
-
-Retrieve an individual's marriage allowance status or check their partner's eligibility to be a marriage allowance recipient. NEED TO FORMAT THIS SOMEHOW?
+> Retrieve an individual's marriage allowance status or check their partner's eligibility to be a marriage allowance recipient.
 
 ## Handling platform connectivity issues
 
@@ -65,5 +61,4 @@ Check you have access to the API catalogue by browsing or CURLing the URL:
 curl 'https://admin.tax.service.gov.uk/integration-catalogue-admin-api/services/integrations?platformFilter=API_PLATFORM&searchTerm=%22Check%20a%20UK%20EORI%20Number%22'
 ```
 
-<%# TODO : Use mailto? Make configurable? %>
-Contact the API catalogue team on api-catalogue-g@digital.hmrc.gov.uk if you cannot access the URL. 
+Contact the API catalogue team on [api-catalogue-g@digital.hmrc.gov.uk](mailto:api-catalogue-g@digital.hmrc.gov.uk) if you cannot access the URL. 
