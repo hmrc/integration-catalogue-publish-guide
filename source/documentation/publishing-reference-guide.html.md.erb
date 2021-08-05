@@ -24,6 +24,7 @@ info:
     name: First Surname
     email: first@surname@example.com
   x-integration-catalogue:
+    reviewed-date: 2021-04-01T19:19:08.000Z
     platform: API_PLATFORM
     publisher-reference: address-lookup
     short-description: This is a private API.
@@ -43,13 +44,20 @@ Here are the available fields.
 
 | FieldName            | Required |
 | -------------------- |:-------------:|
+| reviewed-date        |yes |
 | platform             |no |
 | publisher-reference  |no |
 | short-description    |no |
 | status               |no |
 | backends             |no |
 
-### Platform 
+### Reviewed Date
+Date of when the API was last reviewed.
+This is a mandatory [ISO 8601](https://www.iso.org/standard/40874.html) datetime field.
+For example the date formats
+```2018-12-13T19:19:08.000Z``` and ```2018-12-13``` are both valid.
+
+### Platform
 Before you begin publishing to the API Catalogue you will be given a platform identifier, for example, API_PLATFORM. The platform is used to identify where the API is hosted. 
 
 Contact the API catalogue team at [api-catalogue-g@digital.hmrc.gov.uk](mailto:api-catalogue-g@digital.hmrc.gov.uk) if you don’t know your platform or if your platform needs adding to the catalogue.
@@ -93,6 +101,7 @@ A file transfer is defined in the following JSON schema.
 |title                            | string            | true      | The title will appear in the API catalogue. |
 |description                      | string            | true      | The description will appear in the API catalogue | Up to 180 characters |
 |lastUpdated                      | [ISO 8601](https://www.iso.org/standard/40874.html) datetime | true | Date of when this document was last updated. |
+|reviewedDate                     | [ISO 8601](https://www.iso.org/standard/40874.html) datetime | true | Date of when this document was last reviewed. |
 |contact.name                     | string            | true      | The display name of the contact. |
 |contact.email                    | string            | true      | The email address of the named contact. |
 |sourceSystem                     | string            | true      | List of source systems. Can be an empty list. |
@@ -109,6 +118,7 @@ A file transfer is defined in the following JSON schema.
   "title":"Customer record from CESA to ETMP",
   "description":"A customer file is transfered between CESA and ETMP at the end of each month",
   "lastUpdated":"2021-01-01T13:45:10Z",
+  "reviewedDate":"2021-02-02T13:45:10Z",
   "contact":{
     "name":"Example Contact",
     "emailAddress":"example.contact@example.con"
