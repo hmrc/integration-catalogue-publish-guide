@@ -108,6 +108,7 @@ A file transfer is defined in the following JSON schema.
 |contact.email                    | string            | true      | The email address of the named contact. |
 |sourceSystem                     | string            | true      | List of source systems. Can be an empty list. |
 |targetSystem                     | string            | true      | List of target systems. Can be an empty list. |
+|transports                       | string            | true      | List of transports used in the file transfer. |
 |fileTransferPattern              | string            | true      | Textual description of the file transfer architecture pattern. |
 
 ### Example
@@ -130,6 +131,10 @@ A file transfer is defined in the following JSON schema.
   ],
   "targetSystem":[
     "ETMP"
+  ],
+  "transports":[
+    "UTM",
+    "S3"
   ],
   "fileTransferPattern":"Corp to Corp"
 }
