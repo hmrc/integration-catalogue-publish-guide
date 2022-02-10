@@ -33,9 +33,6 @@ max_toc_heading_level: 2
 # Prevent robots from indexing (e.g. whilst in development)
 prevent_indexing: false
 
-# Tracking ID from Google Analytics
-ga_tracking_id: GTM-PLWQQZB
-
 show_contribution_banner: false
 
 publishApiLink: https://admin.tax.service.gov.uk/api-catalogue/integrations/048cd9e1-0ff8-4d81-b4fc-d056895dd8c4/publish-api-for-the-api-catalogue
