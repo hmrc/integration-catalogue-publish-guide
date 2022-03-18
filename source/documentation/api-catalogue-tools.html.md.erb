@@ -21,7 +21,8 @@ curl -X 'PUT' \
   'https://admin.tax.service.gov.uk/integration-catalogue-admin-api/services/apis/publish' \
   -H 'accept: application/json' \
   -H 'x-specification-type: OAS_V3' \
-  -H 'Authorization: <my-key>' \
+  -H 'Authorization: <my-platform-key>' \
+  -H 'x-platform-type: <my-platform-code>' \
   -H 'Content-Type: multipart/form-data' \
   -F 'selectedFile=@my-api-oas.yaml'
 ```
