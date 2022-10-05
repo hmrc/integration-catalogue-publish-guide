@@ -74,7 +74,17 @@ If your API already has a reference number that does not change, this will make 
 All APIs must have a [short description of up to 180 characters including spaces](/documentation/getting-in-right.html#writing-good-titles-and-descriptions). Short descriptions appear under the API title on the search results page on the API catalogue.
 
 ### Status
-Tell us the status of the API. Valid vstatus alues are ALPHA, BETA, DEPRECATED or LIVE. If the status field is missing the status will default to LIVE when published.
+
+Tell us the status of the API. Valid status values are;
+
+| Statuc Code       | What is shown in the API catalogue                                                |
+| ------------------|-----------------------------------------------------------------------------------|
+| ALPHA             | Alpha - not ready to use (documentation only and could change)                    |
+| BETA              | Beta - early stage of development and may be available (expect breaking changes)  |
+| LIVE              | Live - available to use                                                           |
+| DEPRECATED        | Deprecated - not recommended for use                                              |
+
+If the status field is missing the status will default to LIVE when published.
 
 ### Backends 
 Backends are a system at HMRC exposed by endpoints in the API. A backend can be a Head of Duty system, for example, ETMP or NPS.
