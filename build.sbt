@@ -1,4 +1,4 @@
-import uk.gov.hmrc.sbtdistributables.SbtDistributablesPlugin.publishingSettings
+import play.sbt.routes.RoutesKeys
 
 val appName = "integration-catalogue-publish-guide"
 
@@ -19,5 +19,7 @@ lazy val microservice = Project(appName, file("."))
     libraryDependencies ++= AppDependencies.compile ++ AppDependencies.test,
     update / evictionWarningOptions := EvictionWarningOptions.default.withWarnScalaVersionEviction(false),
     majorVersion := 0,
-    scalaVersion  := "2.13.8"
+    scalaVersion  := "2.13.8",
+    RoutesKeys.routesImport := Seq.empty,
+    Global / excludeLintKeys += update / evictionWarningOptions
   )
