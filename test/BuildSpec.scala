@@ -19,6 +19,8 @@ package test
 import org.scalatest.{Matchers, WordSpec}
 import sys.process._
 
+import scala.language.postfixOps
+
 class BuildSpec extends WordSpec with Matchers {
   "Building the content" should {
     "produce static files" in {
