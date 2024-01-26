@@ -11,6 +11,6 @@ object AppDependencies {
 
   val test: Seq[ModuleID] = Seq(
     "org.pegdown" % "pegdown" % "1.6.0" % "test",
-    "uk.gov.hmrc"             %% "bootstrap-test-play-30"  % bootstrapPlayVersion
+    "uk.gov.hmrc"             %% "bootstrap-test-play-30"  % bootstrapPlayVersion % "test"
   )
 }
