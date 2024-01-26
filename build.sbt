@@ -2,8 +2,6 @@ import play.sbt.routes.RoutesKeys
 
 val appName = "integration-catalogue-publish-guide"
 
-//ThisBuild / scalafixDependencies += "com.github.liancheng" %% "organize-imports" % "0.6.0"
-
 inThisBuild(
   List(
     scalaVersion := "2.13.12",
