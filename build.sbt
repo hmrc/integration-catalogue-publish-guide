@@ -17,7 +17,8 @@ lazy val microservice = Project(appName, file("."))
     libraryDependencies ++= AppDependencies.compile ++ AppDependencies.test,
     update / evictionWarningOptions := EvictionWarningOptions.default.withWarnScalaVersionEviction(false),
     majorVersion := 0,
-    scalaVersion  := "3.4.2",
+    scalaVersion  := "3.5.0",
     RoutesKeys.routesImport := Seq.empty,
     Global / excludeLintKeys += update / evictionWarningOptions
   )
+  .settings(scalacOptions += "-Wconf:msg=Flag.*repeatedly:s")
